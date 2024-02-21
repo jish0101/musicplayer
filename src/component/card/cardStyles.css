@@ -1,0 +1,44 @@
+.card-container {
+  color: white;
+  position: relative;
+}
+
+.card-container::before,
+.card-container::after {
+  content: '';
+  background-color: #fab5704c;
+  position: absolute;
+}
+
+.card-container::before {
+  /* border-radius: 50%; */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  width: 8rem;
+  height: 8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-container .box {
+  width: 100%;
+  min-height: 20rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.card-container .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-container .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
