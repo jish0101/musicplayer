@@ -10,12 +10,14 @@ const AudioPlayer = ({ audioFile, onEnded, handleSongChange, isRepeat, setIsRepe
   useEffect(() => {
     try {
       const updateTime = () => {
-        setCurrentTime(audioRef.current.currentTime);
-        setDuration(audioRef.current.duration);
+        if (audioRef && audioRef.current) {
+          setCurrentTime(audioRef.current.currentTime);
+          setDuration(audioRef.current.duration);
+        }
       };
 
       const removeTimeUpdateListener = () => {
-        if (audioRef.current) {
+        if (audioRef && audioRef.current) {
           audioRef.current.removeEventListener('timeupdate', updateTime);
         }
       };
